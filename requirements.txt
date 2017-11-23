@@ -14,3 +14,4 @@ safygiphy
 apiai
 requests
 simplejson
+asyncio
