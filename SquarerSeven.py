@@ -11,7 +11,7 @@ CLIENT_ACCESS_TOKEN = 'b6d5e65c84a84d8b805fcdc276d2c57f'
 @client.event
 async def on_ready():
     ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
-    print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | '+str(len(client.servers))+' servers')
+    print("Launched")
     await client.change_presence(game=discord.Game(name='SquarerFive_DEBUG'))
 
 @client.event
