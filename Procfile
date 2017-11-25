@@ -1,2 +1,2 @@
-worker: python SquarerSeven.py
-worker: python SquarerSix.py
+worker: python SquarerSeven.py, python SquarerSix.py
+
