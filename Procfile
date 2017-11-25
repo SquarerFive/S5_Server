@@ -1,2 +1,3 @@
-worker: python SquarerSeven.py, python SquarerSix.py
+worker: python SquarerSeven.py
+urgentworker: python SquarerSix.py
 
