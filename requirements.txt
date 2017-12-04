@@ -16,3 +16,4 @@ requests
 simplejson
 asyncio
 SpeechRecognition
+PyNaCl
