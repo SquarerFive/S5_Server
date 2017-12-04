@@ -11,7 +11,9 @@ key = 'Rs1syy4IJqRnufruCtR07zu6ZwiIx0Pz'
 async def on_ready():
     print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | '+str(len(client.servers))+' servers')
     await client.change_presence(game=discord.Game(name='SquarerFive'))
-
+    voice = await self.bot.join_voice_channel(channel)
+    state = self.get_voice_state(channel.server)
+    state.voice = voice
 @client.event
 async def on_message(message):
     if message.content.startswith('!BotInfo'):
