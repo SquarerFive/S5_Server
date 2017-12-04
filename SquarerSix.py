@@ -11,9 +11,9 @@ key = 'Rs1syy4IJqRnufruCtR07zu6ZwiIx0Pz'
 async def on_ready():
     print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | '+str(len(client.servers))+' servers')
     await client.change_presence(game=discord.Game(name='SquarerFive'))
-    voice = await client.join_voice_channel(channel)
-    state = client.get_voice_state(channel.server)
-    state.voice = voice
+   # voice = await client.join_voice_channel(channel)
+   # state = client.get_voice_state(channel.server)
+   # state.voice = voice
 @client.event
 async def on_message(message):
     if message.content.startswith('!BotInfo'):
@@ -24,7 +24,7 @@ async def on_message(message):
         txt = message.content.replace(message.server.me.mention,'') if message.server else message.content
         r = json.loads(requests.post('https://cleverbot.io/1.0/ask', json={'user':user, 'key':key, 'nick':'frost', 'text':txt}).text)
         if r['status'] == 'success':
-            await client.send_message(message.channel, r['response'] )
+            await client.send_message(message.channel, r['response'], tts=True )
     
 print('Starting...')
 requests.post('https://cleverbot.io/1.0/create', json={'user':user, 'key':key, 'nick':'frost'})
