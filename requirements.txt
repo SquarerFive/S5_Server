@@ -15,3 +15,4 @@ apiai
 requests
 simplejson
 asyncio
+SpeechRecognition
