@@ -24,7 +24,7 @@ async def on_message(message):
         txt = message.content.replace(message.server.me.mention,'') if message.server else message.content
         r = json.loads(requests.post('https://cleverbot.io/1.0/ask', json={'user':user, 'key':key, 'nick':'frost', 'text':txt}).text)
         if r['status'] == 'success':
-            await client.send_message(message.channel, r['response'], tts=True )
+            await client.send_message(message.channel, r['response'], tts=False )
     
 print('Starting...')
 requests.post('https://cleverbot.io/1.0/create', json={'user':user, 'key':key, 'nick':'frost'})
