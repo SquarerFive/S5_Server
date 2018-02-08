@@ -13,7 +13,6 @@ async def on_ready():
     ai = apiai.ApiAI(CLIENT_ACCESS_TOKEN)
     print("Launched")
     await client.change_presence(game=discord.Game(name='SquarerFive_DEBUG'))
-
 @client.event
 async def on_message(message):
     if message.content.startswith('!BotInfo'):
