@@ -82,7 +82,7 @@ Creator: SquarerFive [id #4325].
 *http://squarerfive.tk/*
 *http://www.youtube.com/SquarerFiveStudios/*
 __**Hosted Platform:**__   __**Main Server:**__
-**Linux CentOS 7**         **Europe[Currently]**
+**Linux CentOS 7**        **Europe[Currently]**
 **Windows 10**             **Sydney, Autralia[Blue Mountains]**
           """
     em = discord.Embed(title='[ALDI] Administrative Services', description=mainInfo, colour=0x0055FF)
