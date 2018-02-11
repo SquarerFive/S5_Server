@@ -1,12 +1,12 @@
-## Welcome to GitHub Pages
+## Welcome to git.squarerfive.
 
-You can use the [editor on GitHub](https://github.com/SquarerFive/S5_Server/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+This is where I post my bots and etc.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### [ALDI] Administration Bot
+
+[ALDI] Administration bot is used for my server to ease things out and replace the other bots. If you want to use this on your server, it must be properly configured for each channel.
 
 ```markdown
 Syntax highlighted code block
