@@ -9,24 +9,19 @@ This is where I post my bots and etc.
 [ALDI] Administration bot is used for my server to ease things out and replace the other bots. If you want to use this on your server, it must be properly configured for each channel.
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+#Commands:
+!say {message}
+Usage: Use this command to message through the bot.
+--
+!spank {user} {reason}
+Usage: Only can be used by SquarerFive.
+--
+!announce {message}
+Usage: Used for announcements by admins and staff.
+--
+!clear {amount}
+Usage: Clears the message from a channel.
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
 ### Jekyll Themes
 
