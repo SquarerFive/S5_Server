@@ -9,7 +9,7 @@ This is where I post my bots and etc.
 [ALDI] Administration bot is used for my server to ease things out and replace the other bots. If you want to use this on your server, it must be properly configured for each channel.
 
 ```markdown
-#Commands:
+Commands:
 !say {message}
 Usage: Use this command to message through the bot.
 --
@@ -23,8 +23,8 @@ Usage: Used for announcements by admins and staff.
 Usage: Clears the message from a channel.
 ```
 
-### Jekyll Themes
-
+### Invite this bot to your server:
+Invite this bot to your server: [Invite](https://discordapp.com/api/oauth2/authorize?client_id=392807342246199297&permissions=8&scope=bot) .
 Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SquarerFive/S5_Server/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
 ### Support or Contact
