@@ -21,17 +21,7 @@ async def on_ready():
     await Client.change_presence(game=discord.Game(name='[ALDI] | Connected to {}'.format(servers + ' server(s).')))
 
 
-@Client.command(pass_context = True)
-async def spank(ctx, user):
-    a = ctx.message.content
-    name = discord.utils.get(ctx.message.server.members, name=user)
-    print(name[1:])
-    await Client.say("Spanking user")
-    if a.mentioned_in(user):
-        print("Mentioned")
-    print("Worked")
-def is_me(m):
-    return m.author == author
+
 @Client.command(pass_context = True)
 async def say(ctx):
     a=ctx.message.content
@@ -84,6 +74,9 @@ Creator: SquarerFive [id #4325].
 __**Hosted Platform:**__   __**Main Server:**__
 **Linux CentOS 7**       **Europe[Currently]**
 **Windows 10**             **Sydney, Autralia[Blue Mountains]**
+
+**/-----/**
+C++ is clearly better than C#.
           """
     em = discord.Embed(title='[ALDI] Administrative Services', description=mainInfo, colour=0x0055FF)
     em2 = discord.Embed(title='[ALDI] Administrative Services', description=otherInfo, colour=0x0055FF)
@@ -122,6 +115,22 @@ Discord ToS/Guidelines apply here too.
     em = discord.Embed(title='[ALDI] Administrative Services', description=rules, colour=0x0055FF)
     await Client.send_message(b, embed=em)
 
+@Client.command(pass_context = True)
+async def spank(ctx, user):
+    a=ctx.message.content
+    b=ctx.message.channel
+    c=ctx.message.author
+    d=user
+    desc=c.mention + " has spanked " + user + " " + a[29:]
+   # await Client.say(desc)
+    print(c.id)
+    print(desc)
+    if c.id == "176869575709687808":
+        em = discord.Embed(title='[ALDI] Administrative Services', description=desc, colour=0x0055FF)
+        await Client.send_message(b, embed=em)
+    else:
+        em2 = discord.Embed(title='[ALDI] Administrative Services', description="You cannot spank users with those hands " + c.mention +".", colour=0x0055FF)
+        await Client.send_message(b, embed=em2)
     
 #@Client.event
 
