@@ -25,8 +25,4 @@ Usage: Clears the message from a channel.
 
 ### Invite this bot to your server:
 Invite this bot to your server: [Invite](https://discordapp.com/api/oauth2/authorize?client_id=392807342246199297&permissions=8&scope=bot) .
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/SquarerFive/S5_Server/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
