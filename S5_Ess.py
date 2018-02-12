@@ -137,7 +137,7 @@ async def yell(ctx):
     a=ctx.message.content
     b=ctx.message.channel
     c=ctx.message.author
-    em = discord.Embed(title='[ALDI] | Yell', description=a[4:], colour=0xFF0000)
+    em = discord.Embed(title='[ALDI] | Yell', description=a[6:], colour=0xFF0000)
     await Client.send_message(b, embed=em)
     await Client.delete_message(ctx.message)
 #@Client.event
