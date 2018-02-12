@@ -24,6 +24,7 @@ async def on_ready():
 
 @Client.command(pass_context = True)
 async def say(ctx):
+    """ Use this if you want the bot to talk for you. Usage: !say {message} . """
     a=ctx.message.content
     print(a[5:])
     b=ctx.message.channel
@@ -35,7 +36,7 @@ async def say(ctx):
         await Client.say("C++ is clearly better")
         await Client.delete_message(ctx.message)
     else:
-        em = discord.Embed(title='[ALDI] Administrative Services', description=a[5:], colour=0xFFD400)
+        em = discord.Embed(title='[ALDI] | Say', description=a[5:], colour=0xFFD400)
         await Client.send_message(b, embed=em)
         await Client.delete_message(ctx.message)
 
@@ -44,7 +45,7 @@ async def announce(ctx):
     a=ctx.message.content
     b=ctx.message.channel
     c=ctx.message.author
-    em = discord.Embed(title='[ALDI] Announcement', description=a[10:], colour=0x0055FF)
+    em = discord.Embed(title='[ALDI] | Announcement', description=a[10:], colour=0x0055FF)
     await Client.send_message(b, embed=em)
     await Client.delete_message(ctx.message)
 @Client.command(pass_context = True)
@@ -126,12 +127,19 @@ async def spank(ctx, user):
     print(c.id)
     print(desc)
     if c.id == "176869575709687808":
-        em = discord.Embed(title='[ALDI] Administrative Services', description=desc, colour=0x0055FF)
+        em = discord.Embed(title='[ALDI] | Spank', description=desc, colour=0x0055FF)
         await Client.send_message(b, embed=em)
     else:
         em2 = discord.Embed(title='[ALDI] Administrative Services', description="You cannot spank users with those hands " + c.mention +".", colour=0x0055FF)
         await Client.send_message(b, embed=em2)
-    
+@Client.command(pass_context = True)
+async def yell(ctx):
+    a=ctx.message.content
+    b=ctx.message.channel
+    c=ctx.message.author
+    em = discord.Embed(title='[ALDI] | Yell', description=a[4:], colour=0xFF0000)
+    await Client.send_message(b, embed=em)
+    await Client.delete_message(ctx.message)
 #@Client.event
 
     
