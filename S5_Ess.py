@@ -36,7 +36,7 @@ async def say(ctx):
         await Client.say("C++ is clearly better")
         await Client.delete_message(ctx.message)
     else:
-        em = discord.Embed(title='[ALDI] | Say', description=a[5:], colour=0xFFD400)
+        em = discord.Embed(title='[ALDI] | Say', description=a[5:], colour=0x51ff44)
         await Client.send_message(b, embed=em)
         await Client.delete_message(ctx.message)
 
