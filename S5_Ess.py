@@ -11,6 +11,7 @@ import asyncio
 import discord
 author=('')
 from discord.ext.commands import Bot
+import sys
 Token = 'MzkyODA3MzQyMjQ2MTk5Mjk3.DRsl6A.U_Ecd90uVdEpgKVoQlg5b5Th44A'
 Client = Bot('!')
 @Client.event
@@ -24,7 +25,7 @@ async def on_ready():
 
 @Client.command(pass_context = True)
 async def say(ctx):
-    """ Use this if you want the bot to talk for you. Usage: !say {message} . """
+    """ Use this to send messages without yourself. """
     a=ctx.message.content
     print(a[5:])
     b=ctx.message.channel
@@ -36,7 +37,7 @@ async def say(ctx):
         await Client.say("C++ is clearly better")
         await Client.delete_message(ctx.message)
     else:
-        em = discord.Embed(title='[ALDI] | Say', description=a[5:], colour=0x51ff44)
+        em = discord.Embed(title='[ALDI] Administrative Services', description=a[5:], colour=0xFFD400)
         await Client.send_message(b, embed=em)
         await Client.delete_message(ctx.message)
 
@@ -45,7 +46,7 @@ async def announce(ctx):
     a=ctx.message.content
     b=ctx.message.channel
     c=ctx.message.author
-    em = discord.Embed(title='[ALDI] | Announcement', description=a[10:], colour=0x0055FF)
+    em = discord.Embed(title='[ALDI] Announcement', description=a[10:], colour=0x0055FF)
     await Client.send_message(b, embed=em)
     await Client.delete_message(ctx.message)
 @Client.command(pass_context = True)
@@ -62,7 +63,7 @@ async def info(ctx):
     b=ctx.message.channel
     c=ctx.message.author
     mainInfo= """[ALDI] Administrative Services, formerly known as SquarerFive_Essentials.
-**Version:** 1.0.1 // //
+**Version:** 1.0.2 // //
 **Hosted Locations:**
 *France [Redundency Server]*
 *Sydney, Australia [Blue Mountains]*
@@ -127,20 +128,62 @@ async def spank(ctx, user):
     print(c.id)
     print(desc)
     if c.id == "176869575709687808":
-        em = discord.Embed(title='[ALDI] | Spank', description=desc, colour=0x0055FF)
+        em = discord.Embed(title='[ALDI] Administrative Services', description=desc, colour=0x0055FF)
         await Client.send_message(b, embed=em)
     else:
         em2 = discord.Embed(title='[ALDI] Administrative Services', description="You cannot spank users with those hands " + c.mention +".", colour=0x0055FF)
         await Client.send_message(b, embed=em2)
 @Client.command(pass_context = True)
-async def yell(ctx):
+async def clear(ctx, number):
+    mgs = [] 
+    number = int(number) 
+    async for x in Client.logs_from(ctx.message.channel, limit = number):
+        mgs.append(x)
+    await Client.delete_messages(mgs)
+
+@Client.command(pass_context = True)
+async def iam(ctx):
     a=ctx.message.content
     b=ctx.message.channel
     c=ctx.message.author
-    em = discord.Embed(title='[ALDI] | Yell', description=a[6:], colour=0xFF0000)
-    await Client.send_message(b, embed=em)
-    await Client.delete_message(ctx.message)
-#@Client.event
+    print(a[5:])
+    role=a[5:]
+    roles=['YouTuber', 'sick dard', 'Subscribers']
+    real_roles=['YouTubers/Streamers', 'sick dard', 'Subscribers']
+    roleid=['350934547858325504']
+    if a[5:] in roles:
+        index = roles.index(role)
+        print(index)
+       # chosen = roleid[index]
+        chosen_role = real_roles[index]
+        role_name = roles[index]
+        print(role_name)
+        print(chosen_role)
+        get_role = discord.utils.get(ctx.message.server.roles, name=chosen_role)
+        await Client.add_roles(c, get_role)
 
-    
+@Client.command(pass_context = True)
+async def commands(ctx):
+    b=ctx.message.channel
+    embed=discord.Embed(title="[ALDI] Administration Service", url="https://www.squarerfive.tk/", description="Here you will find all of the commands for my bot.", color=0x006fe8)
+    embed.set_author(name="[ALDI] SquarerFive", url="https://www.squarerfive.tk")
+    embed.add_field(name="Commands:", value="!say | Usage: !say {message}", inline=False)
+    embed.add_field(name="!spank ", value="!spank | Usage: !spank {user.mention}", inline=False)
+    embed.add_field(name="!iam ", value="!iam | Usage: !iam {role name}", inline=False)
+    embed.add_field(name="!yell ", value="!yell | Usage: !yell {message}", inline=False)
+    embed.add_field(name="!commands ", value="!commands | Used to display this.", inline=False)
+    embed.add_field(name="!roles ", value="!roles | Used to display roles that are obtainable.", inline=False)
+    embed.set_footer(text="© SquarerFive - 2018")
+    await Client.send_message(b, embed=embed)
+
+@Client.command(pass_context = True)
+async def roles(ctx):
+    b=ctx.message.channel
+    embed=discord.Embed(title="[ALDI] Administration Service",url="https://www.squarerfive.tk/", description="Available roles: (Roles are case sensitive!)", color=0x006fe8)
+    embed.set_author(name="[ALDI] SquarerFive", url="https://www.squarerfive.tk")
+    embed.add_field(name="YouTuber", value="Use this role if you are a YouTuber or a streamer.", inline=False)
+    embed.add_field(name="sick dard", value="Haven't checked this role yet", inline=False)
+    embed.add_field(name="Subscribers", value="If you are a subscriber, use this role.", inline=False)
+    embed.set_footer(text="© SquarerFive - 2018")
+    await Client.send_message(b, embed=embed)
 Client.run(Token)
