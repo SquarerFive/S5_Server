@@ -12,7 +12,7 @@ import discord
 author=('')
 from discord.ext.commands import Bot
 import sys
-Token = 'MzkyODA3MzQyMjQ2MTk5Mjk3.DRsl6A.U_Ecd90uVdEpgKVoQlg5b5Th44A'
+Token = '###_HIDDEN_###'
 Client = Bot('!')
 @Client.event
 async def on_ready():
