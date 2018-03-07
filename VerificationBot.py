@@ -107,7 +107,7 @@ async def on_message(message):
     
 print('Starting...')
 requests.post('https://cleverbot.io/1.0/create', json={'user':user, 'key':key, 'nick':'frost'})
-client.run('MzkyODA3MzQyMjQ2MTk5Mjk3.DRsl6A.U_Ecd90uVdEpgKVoQlg5b5Th44A')
+client.run('redacted lol')
 
 @client.event
 async def on_exit():
