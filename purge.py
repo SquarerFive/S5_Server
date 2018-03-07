@@ -1,7 +1,7 @@
 import asyncio
 import discord
 from discord.ext.commands import Bot
-Token = 'MzkyODA3MzQyMjQ2MTk5Mjk3.DRsl6A.U_Ecd90uVdEpgKVoQlg5b5Th44A'
+Token = 'Redacted lol'
 Client = Bot('!')
 
 
