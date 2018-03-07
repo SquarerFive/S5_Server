@@ -45,5 +45,5 @@ async def on_message(message):
     
 print('Starting...')
 #requests.post('https://cleverbot.io/1.0/create', json={'user':user, 'key':key, 'nick':'frost'})
-client.run('MzgwOTM4NzYzMDIwNDAyNjk4.DO_4ZA.-KhSCrO0gcMYjc0T3reLaEY7uvk')
+client.run('Removed Bot Token lol')
 quit()
