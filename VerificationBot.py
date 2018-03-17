@@ -67,7 +67,7 @@ async def on_message(message):
     
     xs = str(x)
     if message.content.startswith('!redeem'):
-        await client.send_message(message.channel, 'Please enter your key.')
+        await client.send_message(message.channel, '[Currently the keys are unavailable, please wait until further notice.]')
         print(keys)
         if len(keys) <=1:
             generate_code()
