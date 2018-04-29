@@ -12,7 +12,7 @@ import discord
 author=('')
 from discord.ext.commands import Bot
 import sys
-Token = 'MzkyODA3MzQyMjQ2MTk5Mjk3.DccOjA.Ig0sZiUTbS6juu21gSAIlAjqbPA'
+Token = '[Redacted]'
 Client = Bot('!')
 @Client.event
 async def on_ready():
