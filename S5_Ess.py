@@ -134,7 +134,7 @@ async def spank(ctx, user):
         em2 = discord.Embed(title='[ALDI] Administrative Services', description="You cannot spank users with those hands " + c.mention +".", colour=0x0055FF)
         await Client.send_message(b, embed=em2)
 @Client.command(pass_context = True)
-async def clear(ctx, number):
+async def purge(ctx, number):
     mgs = [] 
     number = int(number) 
     async for x in Client.logs_from(ctx.message.channel, limit = number):
