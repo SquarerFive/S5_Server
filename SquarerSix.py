@@ -25,7 +25,7 @@ async def on_message(message):
         r = json.loads(requests.post('https://cleverbot.io/1.0/ask', json={'user':user, 'key':key, 'nick':'frost', 'text':txt}).text)
         if r['status'] == 'success':
             em = discord.Embed(title='[ALDI] SquarerSix', description=r['response'], colour=0xFFD400)
-            await client.send_message(message.channel, embed=em)
+            await client.send_message(message.channel, r['response'])
     
 print('Starting...')
 requests.post('https://cleverbot.io/1.0/create', json={'user':user, 'key':key, 'nick':'frost'})
