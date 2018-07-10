@@ -18,8 +18,14 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith('!BotInfo'):
         await client.send_message(message.channel, 'Bot programmed by SquarerFive, made in Python 3. I am an A.I and I will destroy all humans | More features coming soon.')
-    
-    elif not message.author.bot:
+    if "dm me" in message.content.lower() and client.user.mentioned_in(message):
+            txt = message.content.replace(message.server.me.mention,'') if message.server else message.content
+            r = json.loads(requests.post('https://cleverbot.io/1.0/ask', json={'user':user, 'key':key, 'nick':'frost', 'text':"hi"}).text)
+            if r['status'] == 'success':
+                em = discord.Embed(title='[ALDI] SquarerSix', description=r['response'], colour=0xFFD400)
+                await client.send_message(message.author, r['response'])
+            return
+    if not message.author.bot:
      #   await client.send_typing(message.channel)
         txt = message.content.replace(message.server.me.mention,'') if message.server else message.content
         r = json.loads(requests.post('https://cleverbot.io/1.0/ask', json={'user':user, 'key':key, 'nick':'frost', 'text':txt}).text)
