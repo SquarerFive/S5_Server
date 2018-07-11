@@ -14,7 +14,7 @@ async def on_ready():
    # voice = await client.join_voice_channel(channel)
    # state = client.get_voice_state(channel.server)
    # state.voice = voice
-    client.setUsername("Arisumarai")
+   # client.setUsername("Arisumarai")
 @client.event
 async def on_message(message):
     if message.content.startswith('!BotInfo'):
@@ -27,7 +27,7 @@ async def on_message(message):
                 await client.send_message(message.author, r['response'])
             return
     if not message.author.bot:
-     #   await client.send_typing(message.channel)
+        await client.send_typing(message.channel)
         txt = message.content.replace(message.server.me.mention,'') if message.server else message.content
         r = json.loads(requests.post('https://cleverbot.io/1.0/ask', json={'user':user, 'key':key, 'nick':'frost', 'text':txt}).text)
         if r['status'] == 'success':
@@ -36,7 +36,7 @@ async def on_message(message):
     
 print('Starting...')
 requests.post('https://cleverbot.io/1.0/create', json={'user':user, 'key':key, 'nick':'frost'})
-client.run('NDY2MjIwODg2NDg0MzIwMjg3.DiY8Rw.cPfeKu1KySs2BnbH4rRJ8wKy6j0')
+client.run('NDY2NTgxOTUxMjM1NzUxOTU2.DieJ1g.XRAyN5d5wUVdggEK85iFFhhD7YM')
 
 @client.event
 async def on_exit():
