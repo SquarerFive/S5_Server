@@ -26,7 +26,7 @@ async def on_message(message):
                 em = discord.Embed(title='[ALDI] SquarerSix', description=r['response'], colour=0xFFD400)
                 await client.send_message(message.author, r['response'])
             return
-    if not message.author.bot:
+    if not message.author.bot and client.user.mentioned_in(message):
         await client.send_typing(message.channel)
         txt = message.content.replace(message.server.me.mention,'') if message.server else message.content
         r = json.loads(requests.post('https://cleverbot.io/1.0/ask', json={'user':user, 'key':key, 'nick':'frost', 'text':txt}).text)
