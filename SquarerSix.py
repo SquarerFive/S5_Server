@@ -14,7 +14,7 @@ async def on_ready():
    # voice = await client.join_voice_channel(channel)
    # state = client.get_voice_state(channel.server)
    # state.voice = voice
-     client.setUsername("Arisumarai")
+    client.setUsername("Arisumarai")
 @client.event
 async def on_message(message):
     if message.content.startswith('!BotInfo'):
