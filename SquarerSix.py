@@ -17,6 +17,8 @@ async def on_ready():
    # client.setUsername("Arisumarai")
 @client.event
 async def on_message(message):
+    if message.content.lower() == "reminder":
+        await client.send_message(message.channel, 'https://cdn.discordapp.com/attachments/179926436596023296/471875417762955274/StateNotice.png')
     if message.content.startswith('!BotInfo'):
         await client.send_message(message.channel, 'Bot programmed by SquarerFive, made in Python 3. I am an A.I and I will destroy all humans | More features coming soon.')
     if "dm me" in message.content.lower() and client.user.mentioned_in(message):
