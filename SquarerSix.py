@@ -4,8 +4,8 @@ import requests
 import json
 from discord.ext import commands
 client = discord.Client()
-user = 'iX7bgNY7pj4BBLsb'
-key = 'Rs1syy4IJqRnufruCtR07zu6ZwiIx0Pz'
+user = 'dRV2Q6OXy0Fdu7Kv'
+key = 'tHSIaJvgiVRvBpU717XwpS5sVSZP8oDe'
 
 @client.event
 async def on_ready():
