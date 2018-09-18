@@ -12,7 +12,7 @@ import discord
 author=('')
 from discord.ext.commands import Bot
 import sys
-Token = '[Redacted]'
+Token = 'MzkyODA3MzQyMjQ2MTk5Mjk3.DoIsRA.Ht-U4Tlku0gdyYkaZl1f9nQ31GA'
 Client = Bot('!')
 @Client.event
 async def on_ready():
@@ -43,12 +43,18 @@ async def say(ctx):
 
 @Client.command(pass_context = True)
 async def announce(ctx):
-    a=ctx.message.content
-    b=ctx.message.channel
-    c=ctx.message.author
-    em = discord.Embed(title='[ALDI] Announcement', description=a[10:], colour=0x0055FF)
-    await Client.send_message(b, embed=em)
-    await Client.delete_message(ctx.message)
+    if(ctx.message.author.server_permissions.administrator):
+        a=ctx.message.content
+        b=ctx.message.channel
+        c=ctx.message.author
+        em = discord.Embed(title='[ALDI] Announcement', description=a[10:], colour=0x0055FF)
+        await Client.send_message(b, embed=em)
+        await Client.delete_message(ctx.message)
+    else:
+        a=ctx.message.content
+        b=ctx.message.channel
+        c=ctx.message.author
+        em = discord.Embed(title='Error', description="Permissions Invalid! [E1:48:P32:S5]")
 @Client.command(pass_context = True)
 async def s5fps(ctx):
     a=ctx.message.content
@@ -63,22 +69,18 @@ async def info(ctx):
     b=ctx.message.channel
     c=ctx.message.author
     mainInfo= """[ALDI] Administrative Services, formerly known as SquarerFive_Essentials.
-**Version:** 1.0.2 // //
+**Version:** 1.0.5 // //
 **Hosted Locations:**
-*France [Redundency Server]*
-*Sydney, Australia [Blue Mountains]*
-*Hong Kong[Backup Server]*"""
+H16-Europe
+**Last Updated:**
+September 18 2018"""
     otherInfo= """
 Creator: SquarerFive [id #4325].
 **Contacts:**
 *http://squarerfive.tk/*
 *http://www.youtube.com/SquarerFiveStudios/*
-__**Hosted Platform:**__   __**Main Server:**__
-**Linux CentOS 7**       **Europe[Currently]**
-**Windows 10**             **Sydney, Autralia[Blue Mountains]**
-
 **/-----/**
-C++ is clearly better than C#.
+All programming languages are great, they are good for different things <3.
           """
     em = discord.Embed(title='[ALDI] Administrative Services', description=mainInfo, colour=0x0055FF)
     em2 = discord.Embed(title='[ALDI] Administrative Services', description=otherInfo, colour=0x0055FF)
@@ -98,7 +100,7 @@ Any abuse against members and staff will result in a warning.
 If a member reaches a threshold of **3 Warnings**, you will be **Banned** or **Kicked** depending on the violation.
 Bots do not kick members randomly.
 
-**/ Do and Don'ts /**
+**ROC**
 **You Can:**
 Post Discord links in #advertisements.
 Post YouTube/Twitch links in #media.
@@ -186,4 +188,5 @@ async def roles(ctx):
     embed.add_field(name="Subscribers", value="If you are a subscriber, use this role.", inline=False)
     embed.set_footer(text="© SquarerFive - 2018")
     await Client.send_message(b, embed=embed)
+    
 Client.run(Token)
