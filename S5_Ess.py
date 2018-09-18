@@ -183,10 +183,10 @@ async def roles(ctx):
     b=ctx.message.channel
     embed=discord.Embed(title="[ALDI] Administration Service",url="https://www.squarerfive.tk/", description="Available roles: (Roles are case sensitive!)", color=0x006fe8)
     embed.set_author(name="[ALDI] SquarerFive", url="https://www.squarerfive.tk")
-    embed.add_field(name="YouTuber", value="Use this role if you are a YouTuber or a streamer.", inline=False)
-    embed.add_field(name="sick dard", value="Haven't checked this role yet", inline=False)
-    embed.add_field(name="Subscribers", value="If you are a subscriber, use this role.", inline=False)
-    embed.set_footer(text="© SquarerFive - 2018")
+    embed.add_field(name="DEPRECIATED COMMAND", value="[D2:575:65]", inline=False)
+    embed.add_field(name="DEPRECIATED COMMAND", value="[D2:575:65], inline=False)
+    embed.add_field(name="DEPRECIATED COMMAND", value="[D2:575:65]", inline=False)
+    embed.set_footer(text="© SquarerFive - 2017")
     await Client.send_message(b, embed=embed)
     
 Client.run(Token)
