@@ -184,7 +184,7 @@ async def roles(ctx):
     embed=discord.Embed(title="[ALDI] Administration Service",url="https://www.squarerfive.tk/", description="Available roles: (Roles are case sensitive!)", color=0x006fe8)
     embed.set_author(name="[ALDI] SquarerFive", url="https://www.squarerfive.tk")
     embed.add_field(name="DEPRECIATED COMMAND", value="[D2:575:65]", inline=False)
-    embed.add_field(name="DEPRECIATED COMMAND", value="[D2:575:65], inline=False)
+    embed.add_field(name="DEPRECIATED COMMAND", value="[D2:575:65]", inline=False)
     embed.add_field(name="DEPRECIATED COMMAND", value="[D2:575:65]", inline=False)
     embed.set_footer(text="© SquarerFive - 2017")
     await Client.send_message(b, embed=embed)
