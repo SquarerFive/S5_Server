@@ -13,7 +13,8 @@ author=('')
 from discord.ext.commands import Bot
 import sys
 Token = 'MzkyODA3MzQyMjQ2MTk5Mjk3.DoIsRA.Ht-U4Tlku0gdyYkaZl1f9nQ31GA'
-Client = Bot('!')
+Prefix = '!'
+Client = Bot(Prefix)
 @Client.event
 async def on_ready():
     print('Logged in as '+Client.user.name+' (ID:'+Client.user.id+') | '+str(len(Client.servers))+' servers')
@@ -68,24 +69,16 @@ async def info(ctx):
     a=ctx.message.content
     b=ctx.message.channel
     c=ctx.message.author
-    mainInfo= """[ALDI] Administrative Services, formerly known as SquarerFive_Essentials.
-**Version:** 1.0.5 // //
-**Hosted Locations:**
-H16-Europe
-**Last Updated:**
-September 18 2018"""
-    otherInfo= """
-Creator: SquarerFive [id #4325].
-**Contacts:**
-*http://squarerfive.tk/*
-*http://www.youtube.com/SquarerFiveStudios/*
-**/-----/**
-All programming languages are great, they are good for different things <3.
-          """
     em = discord.Embed(title='[ALDI] Administrative Services', description=mainInfo, colour=0x0055FF)
-    em2 = discord.Embed(title='[ALDI] Administrative Services', description=otherInfo, colour=0x0055FF)
+    em.set_author(name="[ALDI] SquarerFive", url="https://www.squarerfive.tk")
+    em.add_field(name="About:", value="[ALDI] Administration is a bot specifically designed for the [ALDI] Discord Server. It will continually be updated over the months adding many features.", inline=False)
+    em.add_field(name="Last Updated:", value="18 September 2018", inline=False)
+    em.add_field(name="Prefix:", value=Prefix, inline=True)
+    em.add_field(name="Hosted Servers:", value="H16 Europe", inline=False)
+    em.add_field(name="Version:", value="1.1.0a", inline=False)
+# em2 = discord.Embed(title='[ALDI] Administrative Services', description=otherInfo, colour=0x0055FF)
     await Client.send_message(b, embed=em)
-    await Client.send_message(b, embed=em2)
+   # await Client.send_message(b, embed=em2)
 
 # rules
 @Client.command(pass_context = True)
