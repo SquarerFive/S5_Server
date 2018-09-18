@@ -69,7 +69,7 @@ async def info(ctx):
     a=ctx.message.content
     b=ctx.message.channel
     c=ctx.message.author
-    em = discord.Embed(title='[ALDI] Administrative Services', description=mainInfo, colour=0x0055FF)
+    em = discord.Embed(title='[ALDI] Administrative Services', description="Info", colour=0x0055FF)
     em.set_author(name="[ALDI] SquarerFive", url="https://www.squarerfive.tk")
     em.add_field(name="About:", value="[ALDI] Administration is a bot specifically designed for the [ALDI] Discord Server. It will continually be updated over the months adding many features.", inline=False)
     em.add_field(name="Last Updated:", value="18 September 2018", inline=False)
