@@ -54,7 +54,7 @@ async def announce(ctx):
         a=ctx.message.content
         b=ctx.message.channel
         c=ctx.message.author
-        em = discord.Embed(title='Error', description="Permissions Invalid! [E1:48:P32:S5]")
+        em = discord.Embed(title='Error', description="Permissions Invalid! [E1:48P:32]")
 @Client.command(pass_context = True)
 async def s5fps(ctx):
     a=ctx.message.content
@@ -94,27 +94,7 @@ async def rules(ctx):
     b=ctx.message.channel
     c=ctx.message.author
     rules="""
-**Rules of conduct:**
-**You** are responsible of what you type and say.
-Any abuse against members and staff will result in a warning.
-If a member reaches a threshold of **3 Warnings**, you will be **Banned** or **Kicked** depending on the violation.
-Bots do not kick members randomly.
-
-**ROC**
-**You Can:**
-Post Discord links in #advertisements.
-Post YouTube/Twitch links in #media.
-Curse passively.
-Talk freely.
-**/------/**
-**You Can't:**
-**You may not** post any images or content that is related to porn or gore/death.
-**You may not** create multiple accounts for spam or to avoid the bans (IPs are tracked).
-**You may not** post Discord Links in channels that are not #advertisements.
-
-**/-----/**
-These rules are subject to **change** at **any time**.
-Discord ToS/Guidelines apply here too.
+[R14:982:F5]
 """
     em = discord.Embed(title='[ALDI] Administrative Services', description=rules, colour=0x0055FF)
     await Client.send_message(b, embed=em)
@@ -137,11 +117,14 @@ async def spank(ctx, user):
         await Client.send_message(b, embed=em2)
 @Client.command(pass_context = True)
 async def purge(ctx, number):
-    mgs = [] 
-    number = int(number) 
-    async for x in Client.logs_from(ctx.message.channel, limit = number):
-        mgs.append(x)
-    await Client.delete_messages(mgs)
+    if(ctx.message.author.server_permissions.administrator):
+        mgs = [] 
+        number = int(number) 
+        async for x in Client.logs_from(ctx.message.channel, limit = number):
+            mgs.append(x)
+        await Client.delete_messages(mgs)
+    else:
+        await Client.send_messsage(ctx.message.channel,"[E1:48P:32]")
 
 @Client.command(pass_context = True)
 async def iam(ctx):
