@@ -1,9 +1,7 @@
 # [ALDI] Administration Services
 ==================================
 
-image:: https://travis-ci.org/SquarerFive/S5_Server.svg?branch=rewrite
-  :alt: Server Build Status.
-  :target: https://travis-ci.org/SquarerFive/S5_Server
+[![Build Status](https://travis-ci.org/SquarerFive/S5_Server.svg?branch=rewrite)](https://travis-ci.org/SquarerFive/S5_Server)
    
 ### This bot is designed specifically for [ALDI] Gaming Platoon Discord but has been expanded and optimized upon over the months. It is now much easier to integrate it into your server.
 Visit [git.squarerfive.tk](http://git.squarerfive.tk/) to invite this bot to your server.
