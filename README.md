@@ -1,4 +1,4 @@
-# [ALDI] Administration Services
+[ALDI] Administration Services
 ====================================
 
 [![Build Status](https://travis-ci.org/SquarerFive/S5_Server.svg?branch=rewrite)](https://travis-ci.org/SquarerFive/S5_Server)
