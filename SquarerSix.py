@@ -20,7 +20,7 @@ async def on_message(message):
    # if message.content.lower() == "reminder":
     #    await client.send_message(message.channel, 'https://cdn.discordapp.com/attachments/179926436596023296/471875417762955274/StateNotice.png')
     if message.content.lower() == "!spank":
-        await client.send_message(message.channel,"{}".format(GetAIResponse("Spank"))
+        await client.send_message(message.channel,"{}".format(GetAIResponse("Spank")))
 #if "token" in message.content.lower() and not message.author.bot:
     #    await client.send_message(message.channel, "Yes, I have your bot's token. You really think you can securely hide passwords in a notepad document? Well I think not. Even you tried hiding your passwords and tokens in the CSS script on your site, didnt end well.")
     if message.content.startswith('!BotInfo'):
