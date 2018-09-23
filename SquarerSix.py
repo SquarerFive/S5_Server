@@ -20,7 +20,7 @@ async def on_message(message):
    # if message.content.lower() == "reminder":
     #    await client.send_message(message.channel, 'https://cdn.discordapp.com/attachments/179926436596023296/471875417762955274/StateNotice.png')
     if message.content.lower() == "!spank":
-        await client.send_message(message.channel,"Get Spanked!")
+        await client.send_message(message.channel,"{}".format(GetAIResponse("Spank"))
 #if "token" in message.content.lower() and not message.author.bot:
     #    await client.send_message(message.channel, "Yes, I have your bot's token. You really think you can securely hide passwords in a notepad document? Well I think not. Even you tried hiding your passwords and tokens in the CSS script on your site, didnt end well.")
     if message.content.startswith('!BotInfo'):
@@ -41,6 +41,11 @@ async def on_message(message):
             await client.send_message(message.channel, r['response'])
         else:
             print(r['status'])
+def GetAIResponse(msg):
+    txt=msg
+    r = json.loads(requests.post('https://cleverbot.io/1.0/ask', json={'user':user, 'key':key, 'nick':'frost', 'text':txt}).text)
+    if r['status']=='success':
+        return r['response']
 print('Starting...')
 requests.post('https://cleverbot.io/1.0/create', json={'user':user, 'key':key, 'nick':'frost'})
 client.run('NDY2NTgxOTUxMjM1NzUxOTU2.DieJ1g.XRAyN5d5wUVdggEK85iFFhhD7YM')
